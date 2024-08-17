@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+/* CSS cho trang about.html */
+.bg-fish {
+    background-image: url('{% static 'assets/Fish1.jpg' %}');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-content {
+    padding: 50px 0;
+    text-align: justify;
+}
+
+.about-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.about-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-content ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-content h1 {
+        font-size: 28px;
+    }
+    
+    .about-content h2 {
+        font-size: 20px;
+    }
+    
+    .about-content p {
+        font-size: 14px;
+    }
+}
+
+</style>
+
+        <!-- Header-->
+        <header class="bg-fish py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class=" text text-center text-white">
+            <h1 class="display-4 fw-bolder">Giới thiệu Công Fish</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Chào mừng bạn đã ghé cửa hàng Công Fish</p>
+
+        </div>
+    </div>
+        </header>
+        
+        <div class="container">
+            <div class="row">
+                
+                    <div class="col-8">
+                    <br/>
+                    <center>
+                    <p>
+                    Cá Cảnh Thuỷ Sinh Công Fish với hơn 20 năm kinh nghiệm trong lĩnh vực cá cảnh tại Việt Nam, Cá Cảnh Công Fish đã trở thành một địa chỉ uy tín đối với khách hàng mỗi khi có nhu cầu về cá cảnh, bể cá, thiết bị phụ kiện dành cho cá cảnh… Chúng tôi tự tin là một trong những cửa hàng về cá cảnh thuỷ sinh lớn nhất khu vực TP. Đà Nẵng
+                    “ Nguyên ngày làm mệt vậy chớ chiều về ghé đây xíu là hết mệt ” đó là một lời chia sẻ đầy tích cực của một vị khách quen thường xuyên đến đây, đôi khi ông ấy chẳng cần phải mua gì cả chỉ đến và dành khoảng 30 phút để ngắm cá rồi ra về. Theo Anh Công, chủ của cửa hàng Cá Cảnh Công Fish cảm nhận ” Người ta thích người ta mới đến cửa hàng mình, chứ không thích rồi thì cho không họ cũng không đến “. Anh lấy đó làm niềm vui là động lực và cứ như vậy, trong suốt hơn 30 năm qua không ít lần vượt khó Cá Cảnh Công Fish giờ đây đã trở thành một cái tên thân quen và là thương hiệu hàng đầu về lĩnh vực cá cảnh – thuỷ sinh ở Đà Nẵng.
+                    </p>
+                    <img src="{% static 'assets/Fish.jpg' %}" alt="">
+                    <br/><br/>
+                    <p>Cửa hàng cá cảnh thuỷ sinh Công Fish, nằm tại 49 Đường Thái Văn Lung - Tp.Đà Nẵng . Đây được xem là địa chỉ cá cảnh lớn nhất khu vực Đà Nẵng, với lịch sử hoạt động lâu đời, trong suốt quãng thời gian hơn 30 năm cửa hàng Trung Tín đã phát triển thành một đơn vị cung cấp đầy đủ các loại cá cảnh, trang thiết bị, vật tư, cây thuỷ sinh, hồ cá cảnh,…phục vụ cho việc xây dựng một hồ cá sang trọng và đẹp mắt.</p>
+                    <br/>
+                    <p>Đến cửa hàng Cá Cảnh Công Fish, bạn sẽ được tận mắt chiêm ngưỡng hàng chục thậm chí hàng trăm loại cá lớn nhỏ vô cùng bắt mắt, ngoài ra là rất nhiều chủng loại thuỷ sinh đa dạng được nuôi trồng ngay chính trang trại riêng của cửa hàng. Tại đây bạn còn được hổ trợ tư vấn đầy đủ về cách thức để thiết kế cũng như duy trì một hồ cá đa dạng, hài hoà mà lại còn phù hợp với không gian nơi bạn đang sống. Bật mí nhé Cá Cảnh Công Fish có đến 2 chi nhánh tại Tp.Đà Nẵng và luôn đảm bảo số lượng sản phẩm cung cấp cho khách hàng đầy đủ nhất.</p>
+                    <br/>
+                    <p>Ngoài bán các sản phẩm về cá cảnh thuỷ sinh, cửa hàng Cá Cảnh Công Fish còn cung cấp các dịch vụ về thiết kế hồ thuỷ sinh, thiết kế hồ cá Koi. Đơn vị đã thiết kế cho rất nhiều công trình lớn nhỏ trải dài từ Bắc vào Nam. Bạn cũng có thể xem thông tin chi tiết về dịch vụ thiết kế hồ cá, hồ cá koi của chúng tôi ngay tại trang website chính thức của cửa hàng (congfish2024@gmail.com).</p>
+                    <br/>
+                    <p>Cá Cảnh Công Fish luôn đặt lợi ích khách hàng lên hàng đầu, chính vì vậy chúng tôi luôn cam kết mang đến quý khách những sản phẩm với chất lượng tốt nhất và giá thành cạnh tranh nhất hiện nay.</p>
+                    <h2>CÁ CẢNH THUỶ SINH CÔNG FISH</h2>
+                    <ul>
+                        <li>Cung cấp các loại cá cảnh.</li>
+                        <li>Cung cấp các thiết bị phục vụ việc nuôi cá cảnh.</li>
+                        <li>Tư vấn lắp đặt các công trình thủy sinh.</li>
+                        <li>Tư vấn chăm sóc, nuôi cá cảnh,…</li>
+                        <li>Tư vấn, thiết kế hồ cá Koi.</li>
+                    </ul>
+                    <br>
+                    <h1>Cảm Ơn Quý Khách</h1>
+                    </center>
+                    </div>
+                
+            </div>
+        </div>
+        
+
+{% endblock %}

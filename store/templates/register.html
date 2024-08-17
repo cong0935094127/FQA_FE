@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<style>
+.bg-fish {
+    background-image: url('{% static 'assets/Fish1.jpg' %}');
+    background-size: cover;
+    background-position: center;
+
+
+}</style>
+
+        <!-- Header-->
+        <header class="bg-fish py-5">
+    <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Đăng kí</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Đăng ký tài khoản người dùng...</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+        	<div class="row">
+        		
+        			<div class="col-md-6 offset-md-3">
+
+        				<br/><br/>
+<form method="POST" action="{% url 'register' %}">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    <br/><br/>
+    <button type="submit" class="btn btn-secondary">
+      Đăng kí
+    </button>
+  
+</form>
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+        			</div>
+        		
+        	</div>
+        </div>
+
+{% endblock %}

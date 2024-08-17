@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+/* CSS cho trang about.html */
+.bg-fish {
+    background-image: url('{% static 'assets/Fish1.jpg' %}');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-content {
+    padding: 50px 0;
+    text-align: justify;
+}
+
+.about-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.about-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-content ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-content h1 {
+        font-size: 28px;
+    }
+    
+    .about-content h2 {
+        font-size: 20px;
+    }
+    
+    .about-content p {
+        font-size: 14px;
+    }
+}
+
+</style>
+
+        <!-- Header-->
+        <header class="bg-fish py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class=" text text-center text-white">
+            <h1 class="display-4 fw-bolder">Phân loại</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Chọn sản phẩm</p>
+
+        </div>
+    </div>
+        </header>
+        <center>
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-8">
+                        <br/>
+                    
+                        {% for category in categories %}
+
+                            <h3><a href="{% url 'category' category %}">{{ category }}</a></h3>
+
+                        {% endfor %}
+                     <br/> <br/> <br/> <br/> <br/> <br/>
+                </div>
+                </center>
+            </div>
+        </div>
+        
+
+{% endblock %}

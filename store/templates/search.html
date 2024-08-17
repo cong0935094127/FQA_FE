@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+/* CSS cho trang about.html */
+.bg-fish {
+    background-image: url('{% static 'assets/Fish1.jpg' %}');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-content {
+    padding: 50px 0;
+    text-align: justify;
+}
+
+.about-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.about-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-content ul li {
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-content h1 {
+        font-size: 28px;
+    }
+    
+    .about-content h2 {
+        font-size: 20px;
+    }
+    
+    .about-content p {
+        font-size: 14px;
+    }
+}
+
+</style>
+
+<!-- Header-->
+<header class="bg-fish py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class=" text text-center text-white">
+            <h1 class="display-4 fw-bolder">Tìm kiếm sản phẩm</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Tìm những gì bạn đang tìm kiếm...</p>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+        <br/> <br/> 
+            <div class="card">
+                
+            </div>
+            <br/><br/>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                {% if searched %}
+                    {% for product in searched %}
+                        {% if product.is_sale %}
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <!-- Sale badge-->
+                                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Giảm giá</div>
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">{{ product.name }}</h5>
+                                            <!-- Sale -->
+                                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                                <div class="bi-star-fill"></div>
+                                                &nbsp;&nbsp;Giảm giá&nbsp;&nbsp;
+                                                <div class="bi-star-fill"></div>
+                                            </div>
+                                            <!-- Product price-->
+                                            <strike>{{ product.price }}VNĐ</strike> &nbsp; {{ product.sale_price }}VNĐ
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center">
+                                            <a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id  %}">Xem chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">{{ product.name }}</h5>
+                                            <!-- Product price-->
+                                            {{ product.price }}VNĐ
+                                        </div>
+                                    </div>
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center">
+                                            <a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id %}">Xem chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+{% endblock %}
